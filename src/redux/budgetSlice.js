@@ -1,16 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
+import {itemList, yearStats} from "./budgetSliceData";
 
 export const budgetSlice = createSlice({
 
     name : 'budget',
 
-    initialState : 0,
+    initialState : {
+        budgetAmount :0,
+        items : itemList,
 
-    reducers :{}
+        selectedYear: '2010'
+    },
+
+    reducers :{
+        selectYear(state,action){
+            state.selectedYear = action.payload;
+        }
+        
+    }
 
 
 
 });
 
-
+export const {selectYear} = budgetSlice.actions;
 export default budgetSlice.reducer;
