@@ -1,7 +1,7 @@
 import BitcoinCard from './components/BitcoinCard';
 import Budget from './components/Budget';
 import Header from './components/Header'
-import ProductList from './components/ProductList';
+import Product from './components/Product';
 
 
 
@@ -12,7 +12,7 @@ function App() {
       <div className='max-w-[1000px] mx-auto'>
         <BitcoinCard/>
         <Budget />
-        <ProductList />
+        <Product />
       </div>
       
     </div>

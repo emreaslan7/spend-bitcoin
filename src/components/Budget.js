@@ -1,12 +1,10 @@
 import { useSelector } from "react-redux"
 import { yearStats } from "../redux/budgetSliceData"
 
-import { useDispatch } from 'react-redux';
-import { selectYear } from '../redux/budgetSlice'
+
 
 
 function Budget() {
-  const remainingBudget = useSelector((state) => state.budget.budgetAmount)
   const selectedYear = useSelector((state) => state.budget.selectedYear)
 
   let choosedBtcPrice;

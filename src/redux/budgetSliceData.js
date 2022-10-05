@@ -1,16 +1,39 @@
 const itemList =[
     {
         id: 1,
-        name: 'burger',
+        name: 'Burger',
         priceUSD: 2,
-        amount: 5
+        img: 'https://neal.fun/spend/images/big-mac.jpg',
+        amount: 0
     },
     {
         id: 2,
-        name: 'bike',
-        priceUSD: 200,
-        amount: 2
-    }
+        name: 'Book',
+        priceUSD: 10,
+        img: 'https://neal.fun/spend/images/book.jpg',
+        amount: 0
+    },
+    {
+        id: 3,
+        name: 'Bike',
+        priceUSD: 400,
+        img: 'https://neal.fun/spend/images/bike.jpg',
+        amount: 0
+    },
+    {
+        id: 4,
+        name: 'Gaming Console',
+        priceUSD: 250,
+        img: 'https://neal.fun/spend/images/gaming-console.jpg',
+        amount: 0
+    },
+    {
+        id: 5,
+        name: 'Video Game',
+        priceUSD: 120,
+        img: 'https://neal.fun/spend/images/video-game.jpg',
+        amount: 0
+    },  
 ]
 
 const yearStats=[  
