@@ -19,18 +19,18 @@ export const budgetSlice = createSlice({
         },
         buyAmount: (state, action) => {
             const {itemId, itemAmount} = action.payload;
-            console.log(itemId);
             if(!(itemId === null)){
                 const product =state.items.find(item => item.id === itemId);
                 product.amount = itemAmount;
             }
             console.log(current(state.items))
-        }
+        },
+
     }
 
 
 
 });
 
-export const { selectYear, buyAmount } = budgetSlice.actions;
+export const { selectYear, buyAmount} = budgetSlice.actions;
 export default budgetSlice.reducer;

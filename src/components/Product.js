@@ -6,16 +6,21 @@ import { buyAmount } from '../redux/budgetSlice'
 
 function Product() {
     
-    const inputAmount = useRef();
-    const products = useSelector((state) => state.budget.items);
+    const inputAddSell = useRef();
 
+    const products = useSelector((state) => state.budget.items);
     const dispatch = useDispatch();
 
-    
+
+    const sellorBuy = (id,tradekey) => {
+        const inputAmount = inputAddSell.current.children[id].lastChild.children[1];
+        tradekey === 'buy' ? inputAmount.value = Number(inputAmount.value) +1 : inputAmount.value = 0;
+        setItemAmount(Number(inputAmount.value));
+        setItemId(Number(id));
+    }
 
     useEffect(() => {
-        dispatch(buyAmount({itemId, itemAmount}));
-        console.log(inputAmount);
+        dispatch(buyAmount({itemId, itemAmount}))
     });
 
     const [itemAmount, setItemAmount] = useState(0);
@@ -26,7 +31,7 @@ function Product() {
         <div className='mx-3 lg:mx-0 mt-2'>
 
 
-            <div  ref={inputAmount} className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1  gap-4 ">
+            <div ref={inputAddSell} className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1  gap-4 ">
 
                 {products.map(item => (
                     <div key={item.id} className="w-full bg-white text-center">
@@ -36,9 +41,10 @@ function Product() {
 
                         <div className="flex justify-around items-center gap-x-3 p-5" >
 
-                            <button onClick={() => setItemAmount(0)} type="button" className="w-full inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0">SELL</button>
+                            <button onClick={() => sellorBuy(item.id,'sell')} type="button" className="w-full inline-block px-6 py-2.5 bg-red-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-red-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0">SELL</button>
 
                             <input
+                                id={item.id}
                                 onChange={(e) => {
                                     setItemId(item.id);
                                     setItemAmount(Number(e.target.value));
@@ -48,7 +54,7 @@ function Product() {
                                 className="w-full px-2.5 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                             />
 
-                            <button onClick={() => setItemAmount(itemAmount+1)} type="button" className="w-full inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Buy</button>
+                            <button onClick={() => sellorBuy(item.id,'buy')} type="button" className="w-full inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-700 hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Buy</button>
                         </div>
 
                     </div>
