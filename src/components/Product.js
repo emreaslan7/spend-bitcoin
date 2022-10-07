@@ -1,3 +1,4 @@
+
 import { useState, useEffect, useRef} from "react";
 import { useSelector } from "react-redux";
 
@@ -14,7 +15,7 @@ function Product() {
 
     const sellorBuy = (id,tradekey) => {
         const inputAmount = inputAddSell.current.children[id].lastChild.children[1];
-        tradekey === 'buy' ? inputAmount.value = Number(inputAmount.value) +1 : inputAmount.value = 0;
+        tradekey === 'buy' ? inputAmount.value = Number(inputAmount.value) +1 : Number(inputAmount.value) === 0 ? inputAmount.value = 0 : inputAmount.value = Number(inputAmount.value) -1;
         setItemAmount(Number(inputAmount.value));
         setItemId(Number(id));
     }

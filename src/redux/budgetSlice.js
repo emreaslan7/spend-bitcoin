@@ -1,5 +1,10 @@
-import { createSlice, current } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk, current } from "@reduxjs/toolkit";
 import { itemList } from "./budgetSliceData";
+
+export const getBtcPriceAsync = createAsyncThunk('budget/getBtcPriceAsync', async () =>{
+    const res = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin');
+    return res.json();
+})
 
 export const budgetSlice = createSlice({
 
@@ -8,8 +13,9 @@ export const budgetSlice = createSlice({
     initialState: {
         budgetAmount: 0,
         items: itemList,
-        
-
+        nowBtcPrice : null,
+        isLoading: false,
+        error : null,
         selectedYear: '2010'
     },
 
@@ -26,6 +32,22 @@ export const budgetSlice = createSlice({
             console.log(current(state.items))
         },
 
+    },
+
+    extraReducers : {
+        [getBtcPriceAsync.pending] : (state,action) => {
+            console.log(action.payload)
+            state.isLoading = true;
+        },
+        [getBtcPriceAsync.fulfilled] : (state,action) => {
+            console.log(action.payload)
+            state.nowBtcPrice = action.payload;
+            state.isLoading = false;
+        },        
+        [getBtcPriceAsync.rejected] : (state,action) => {
+            state.error = action.error.message;
+            state.isLoading = false;
+        },
     }
 
 

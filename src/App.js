@@ -1,7 +1,10 @@
 import BitcoinCard from './components/BitcoinCard';
 import Budget from './components/Budget';
+import Footer from './components/Footer';
 import Header from './components/Header'
 import Product from './components/Product';
+import Receipt from './components/Receipt';
+
 
 
 
@@ -13,8 +16,9 @@ function App() {
         <BitcoinCard/>
         <Budget />
         <Product />
+        <Receipt />
       </div>
-      
+      <Footer/>
     </div>
   );
 }
