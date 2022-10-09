@@ -14,6 +14,7 @@ export const budgetSlice = createSlice({
         budgetAmount: 0,
         items: itemList,
         nowBtcPrice : null,
+        total: 0,
         isLoading: false,
         error : null,
         selectedYear: '2010'
@@ -22,6 +23,10 @@ export const budgetSlice = createSlice({
     reducers: {
         selectYear: (state, action) => {
             state.selectedYear = action.payload;
+            state.items.forEach(item =>{
+                item.amount = 0;
+            })
+            console.log(current(state))
         },
         buyAmount: (state, action) => {
             const {itemId, itemAmount} = action.payload;
@@ -29,18 +34,26 @@ export const budgetSlice = createSlice({
                 const product =state.items.find(item => item.id === itemId);
                 product.amount = itemAmount;
             }
-            console.log(current(state.items))
         },
-
+        createBudget : (state ,action) =>{
+            const {choosedBtcPrice} = action.payload;
+            state.budgetAmount = choosedBtcPrice;
+        },
+        setTotal : (state,action) => {
+            state.total = action.payload;
+        },
+        resetData: (state,action) =>{
+            state.items.forEach(item=>{
+                item.amount = 0;
+            })
+        }
     },
 
     extraReducers : {
         [getBtcPriceAsync.pending] : (state,action) => {
-            console.log(action.payload)
             state.isLoading = true;
         },
         [getBtcPriceAsync.fulfilled] : (state,action) => {
-            console.log(action.payload)
             state.nowBtcPrice = action.payload;
             state.isLoading = false;
         },        
@@ -54,5 +67,5 @@ export const budgetSlice = createSlice({
 
 });
 
-export const { selectYear, buyAmount} = budgetSlice.actions;
+export const { selectYear, buyAmount, createBudget, setTotal, resetData} = budgetSlice.actions;
 export default budgetSlice.reducer;

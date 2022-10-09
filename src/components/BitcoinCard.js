@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 
 import { yearStats } from "../redux/budgetSliceData"
 
-import { useDispatch } from 'react-redux';
-import { selectYear } from '../redux/budgetSlice'
+import { useDispatch, useSelector } from 'react-redux';
+import { selectYear, createBudget } from '../redux/budgetSlice'
 
 
 
@@ -16,10 +16,25 @@ function BitcoinCard() {
     const [selectedYear,setSelectedYear] = useState('Now');
     const dispatch = useDispatch()
 
+
     useEffect(() => {
         dispatch(selectYear(selectedYear));
     });
 
+    useEffect(()=>{
+        dispatch(createBudget({choosedBtcPrice}))
+    })
+
+    const nowBtcPrice = useSelector(state => state.budget.nowBtcPrice)
+
+    let choosedBtcPrice = null;
+    if(!(selectedYear === 'Now')){
+        choosedBtcPrice = yearStats[Number(selectedYear.slice(2))-10]
+    }else{
+        if(!(nowBtcPrice === null)){
+        choosedBtcPrice = nowBtcPrice.market_data.current_price.usd;
+        }
+    }
 
 
 
@@ -31,7 +46,9 @@ function BitcoinCard() {
                 {selectedYear === 'Now' ? "": ' in '+selectedYear}</h1>
 
                 <div className='mt-4'>
-                    <select onChange={(e)=> setSelectedYear(e.target.value)} id="years" className="bg-white border border-gray-300 text-gray-800 font-medium text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
+                    <select onChange={(e)=> {
+                        setSelectedYear(e.target.value);
+                        }} id="years" className="bg-white border border-gray-300 text-gray-800 font-medium text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2">
                         <option defaultValue='Now'>Now</option>
                         {yearStats.map((price,index) =>(
                             <option key={index} value={index+2010}>{index+2010}</option>
