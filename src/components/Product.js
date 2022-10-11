@@ -42,7 +42,7 @@ function Product() {
         for(let i=0; i<5; i++){
             const inputAmounts = inputAddSell.current.children[i].lastChild.children[1];
             inputAmounts.value = 0;
-            const disabledBtn =inputAddSell.current.children[i].lastChild.children[0];
+            
             
         }
     },[year])
