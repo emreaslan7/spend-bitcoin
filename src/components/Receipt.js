@@ -14,16 +14,15 @@ const Receipt = () => {
 
     useEffect(() => {
         dispatch(setTotal(totalUSD))   
-    })
+    },[products])
 
     let boughtProducts=[];
     let totalUSD = 0;
+
     products.forEach(product =>{
-        
         if(!(product.amount === 0)){
             boughtProducts.push(product);
-            totalUSD += product.priceUSD * product.amount;
-
+            totalUSD += Number(product.priceUSD * product.amount);
         }
     })
   
@@ -36,7 +35,7 @@ const Receipt = () => {
                         <div key={product.id} className='max-w-[280px] mx-auto text-center flex flex-row text-base mt-1 font-semibold'>
                             <div className='flex-1 text-left'>{product.name}</div>
                             <div className='w-16 font-bold text-left'>x{millify(product.amount)}</div>
-                            <div className='w-16 text-right'>${millify(product.priceUSD * product.amount)}</div>
+                            <div className='w-16 text-right'>${millify(Number(product.priceUSD * product.amount))}</div>
                         </div> 
                     ))}
                     <div className='max-w-[280px] mx-auto border-t  mt-2.5 flex justify-between'>
