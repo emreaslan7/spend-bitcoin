@@ -3,7 +3,7 @@ import { useState, useEffect, useRef} from "react";
 import { useSelector } from "react-redux";
 
 import { useDispatch } from 'react-redux';
-import { buyAmount } from '../redux/budgetSlice'
+import { buyAmount, resetData } from '../redux/budgetSlice'
 
 function Product() {
 
@@ -38,36 +38,22 @@ function Product() {
         } catch (error) {}
         return disabled;
     }
-    
-    // İNPUT'A fazla değer girildiğinde max olanı kabul edecek
 
-    // const maxAmount = (item) =>{
-    //     const inputAmount = inputAddSell.current.children[item.id].lastChild.children[1];
+    const maxAmount = (item,e) =>{
+        const inputAmount = inputAddSell.current.children[item.id].lastChild.children[1];
         
-    //     if(inputAmount.value > budgetAmount/item.priceUSD ){
-
-    //         if(Math.floor(budgetAmount/item.priceUSD) >= 0 && inputAmount.value <10){
-                
-    //             const maxAmount = Math.floor((budgetAmount-total)/item.priceUSD);
-    //             inputAmount.value = maxAmount;
-                
-    //             setItemId(item.id);
-    //             setItemAmount(Number(maxAmount))
-
-    //         }else if(Math.floor(budgetAmount/item.priceUSD) >= 0 && inputAmount.value >10){
-    //             let newTotal=0;
-    //             newTotal = total - item.amount.priceUSD;
-    //             const maxAmount = Math.floor((budgetAmount-newTotal)/item.priceUSD);
-    //             inputAmount.value = Number(maxAmount);
-                
-    //             setItemId(item.id);
-    //             setItemAmount(Number(maxAmount))
-    //         }
-    //     }else{
-    //         setItemId(item.id);
-    //         setItemAmount(Number(inputAmount.value));
-    //     }
-    // }
+        let inputvalue= Number(e.target.value);
+        if(e.target.value > (budgetAmount-total)/item.priceUSD && e.target.value <10){
+            inputvalue = Math.floor((budgetAmount-total)/item.priceUSD);
+            inputAmount.value = inputvalue;
+        }
+        else if(e.target.value >= 10 && e.target.value > (budgetAmount-total)/item.priceUSD){
+            inputvalue = Math.floor((budgetAmount-total)/item.priceUSD);
+            inputvalue += item.amount;
+            inputAmount.value = inputvalue;
+        }
+        return inputvalue;
+    }
 
     const disabledSell = (item) =>{
         let disabled=false;
@@ -109,12 +95,12 @@ function Product() {
         <div className='mx-3 lg:mx-0 mt-2'>
             
 
-            <div ref={inputAddSell} className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1  gap-4 ">
+            <div ref={inputAddSell} className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1  gap-4 backdrop-blur-md">
 
                 {products.map(item => (
                     
                     <div key={item.id} className="w-full bg-white text-center">
-                        <img className="mx-auto max-w-full mt-8 my-4 h-32" alt="" src={item.img} />
+                        <img className="mx-auto max-w-full mt-8 my-4 h-32" alt=""src={item.img} />
                         <h3>{item.name}</h3>
                         <p>{item.priceUSD} $</p>
 
@@ -127,8 +113,8 @@ function Product() {
                                 id={item.id}
                                 onChange={(e) => {
                                     setItemId(item.id);
-                                    setItemAmount(Number(e.target.value));
-                                    // maxAmount(item,e);
+                                    setItemAmount(Number(maxAmount(item,e)));
+                                    maxAmount(item,e);
                                 }}
                                 placeholder={0}
                                 type="number"

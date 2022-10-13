@@ -3,7 +3,7 @@ const itemList =[
         id: 0,
         name: 'Burger',
         priceUSD: 2,
-        img: 'https://neal.fun/spend/images/big-mac.jpg',
+        img: require('../assets/products/crypto-mcdonalds.png'),
         amount: 0
     },
     {

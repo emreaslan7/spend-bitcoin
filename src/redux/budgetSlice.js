@@ -41,6 +41,9 @@ export const budgetSlice = createSlice({
         },
         setTotal : (state,action) => {
             state.total = action.payload;
+        },
+        resetData: (state,action) =>{
+            state.items[action.payload].amount = 0;
         }
     },
 
@@ -62,5 +65,5 @@ export const budgetSlice = createSlice({
 
 });
 
-export const { selectYear, buyAmount, createBudget, setTotal} = budgetSlice.actions;
+export const { selectYear, buyAmount, createBudget, setTotal, resetData} = budgetSlice.actions;
 export default budgetSlice.reducer;
