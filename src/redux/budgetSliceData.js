@@ -10,30 +10,81 @@ const itemList =[
         id: 1,
         name: 'Book',
         priceUSD: 10,
-        img: 'https://neal.fun/spend/images/book.jpg',
+        img: require('../assets/products/book.png'),
         amount: 0
     },
     {
         id: 2,
-        name: 'Bike',
-        priceUSD: 400,
-        img: 'https://neal.fun/spend/images/bike.jpg',
+        name: 'Bitcoin Pizza',
+        priceUSD: 35,
+        img: require('../assets/products/bitcoin-pizza.png'),
         amount: 0
     },
     {
         id: 3,
-        name: 'Gaming Console',
-        priceUSD: 250,
-        img: 'https://neal.fun/spend/images/gaming-console.jpg',
+        name: 'Whale Toy',
+        priceUSD: 90,
+        img: require('../assets/products/whale-toy.png'),
         amount: 0
     },
     {
         id: 4,
         name: 'Video Game',
         priceUSD: 120,
-        img: 'https://neal.fun/spend/images/video-game.jpg',
+        img: require('../assets/products/web2Game.png'),
         amount: 0
-    },  
+    },
+    {
+        id: 5,
+        name: 'Gaming Console',
+        priceUSD: 250,
+        img: 'https://neal.fun/spend/images/gaming-console.jpg',
+        amount: 0
+    },
+    {
+        id: 6,
+        name: 'Bike',
+        priceUSD: 400,
+        img: 'https://neal.fun/spend/images/bike.jpg',
+        amount: 0
+    },
+    {
+        id: 7,
+        name: 'Mining Garden Gnome',
+        priceUSD: 435,
+        img: require('../assets/products/mining-garden-gnome.jpg'),
+        amount: 0
+    },
+    {
+        id: 8,
+        name: 'Shiba Inu',
+        priceUSD: 1200,
+        img: require('../assets/products/shiba-inu.png'),
+        amount: 0
+    },
+    {
+        id: 9,
+        name: 'Nvidia RTX-4090',
+        priceUSD: 1640,
+        img: require('../assets/products/nvidia-rtx-4090.png'),
+        amount: 0
+    },
+    {
+        id: 10,
+        name: 'Tesla Car',
+        priceUSD: 52300,
+        img: require('../assets/products/tesla-car.png'),
+        amount: 0
+    },
+    {
+        id: 11,
+        name: 'Lambo (WEN)',
+        priceUSD: 235000,
+        img: require('../assets/products/lambo.png'),
+        amount: 0
+    },
+
+  
 ]
 
 const yearStats=[  

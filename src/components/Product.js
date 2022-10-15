@@ -118,7 +118,7 @@ function Product() {
                                 }}
                                 placeholder={0}
                                 type="number"
-                                className="w-full px-2.5 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 read-only:focus:border-gray-300 focus:outline-none"
+                                className="min-w-[32px] w-full px-2.5 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 read-only:focus:border-gray-300 focus:outline-none"
                             />
 
                             <button disabled={disabledBuy(item)} onClick={() => sellorBuy(item,'buy')} type="button" className="disabled:bg-gray-300 w-full inline-block px-6 py-2.5 bg-green-600 text-white font-medium text-sm leading-tight uppercase rounded enabled:shadow-md enabled:hover:bg-green-700 enabled:hover:shadow-lg enabled:focus:shadow-lg enabled:focus:outline-none focus:ring-0 transition duration-150 ease-in-out">Buy</button>

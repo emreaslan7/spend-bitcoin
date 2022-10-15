@@ -9,6 +9,8 @@ import { setTotal } from "../redux/budgetSlice"
 const Receipt = () => {
 
     const products = useSelector((state) => state.budget.items);
+    const budgetAmount = useSelector((state) => state.budget.budgetAmount);
+    const total = useSelector((state) => state.budget.total);
     
     const dispatch = useDispatch()
 
@@ -40,6 +42,10 @@ const Receipt = () => {
                     ))}
                     <div className='max-w-[280px] mx-auto border-t  mt-2.5 flex justify-between'>
                         <div className='border-gray-900 font-bold text-md'>TOTAL</div>
+                        <div className='text-base font-semibold flex items-center'>{millify(1-(budgetAmount-total)/budgetAmount,{precision : 6})}
+                            <img alt='btc' className='w-3 h-3 mt-[0.2rem]' src='https://cdn-icons-png.flaticon.com/512/25/25180.png'/>
+                        </div>
+                        
                         <div className='text-base font-semibold'>${millify(totalUSD,{precision: 3})}</div>
                     </div>
                 </div>
