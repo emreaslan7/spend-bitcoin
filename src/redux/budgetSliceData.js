@@ -57,27 +57,48 @@ const itemList =[
     },
     {
         id: 8,
+        name: 'Smartphone',
+        priceUSD: 700,
+        img: 'https://neal.fun/spend/images/smartphone.jpg',
+        amount: 0
+    },
+    {
+        id: 9,
         name: 'Shiba Inu',
         priceUSD: 1200,
         img: require('../assets/products/shiba-inu.png'),
         amount: 0
     },
     {
-        id: 9,
+        id: 10,
         name: 'Nvidia RTX-4090',
         priceUSD: 1640,
         img: require('../assets/products/nvidia-rtx-4090.png'),
         amount: 0
     },
     {
-        id: 10,
+        id: 11,
+        name: 'Rolex',
+        priceUSD: 15700,
+        img: 'https://neal.fun/spend/images/rolex.jpg',
+        amount: 0
+    },
+    {
+        id: 12,
+        name: 'Real Bored Ape',
+        priceUSD: 25000,
+        img: require('../assets/products/real-bored-ape.png'),
+        amount: 0
+    },
+    {
+        id: 13,
         name: 'Tesla Car',
         priceUSD: 52300,
         img: require('../assets/products/tesla-car.png'),
         amount: 0
     },
     {
-        id: 11,
+        id: 14,
         name: 'Lambo (WEN)',
         priceUSD: 235000,
         img: require('../assets/products/lambo.png'),
