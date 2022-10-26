@@ -1,104 +1,118 @@
 const itemList =[
     {
         id: 0,
-        name: 'Burger',
-        priceUSD: 2,
-        img: require('../assets/products/crypto-mcdonalds.png'),
+        name: 'Meta Mask',
+        priceUSD: 0.60,
+        img: require('../assets/products/meta-mask.png'),
         amount: 0
     },
     {
         id: 1,
+        name: 'Burger',
+        priceUSD: 6.49,
+        img: require('../assets/products/crypto-mcdonalds.png'),
+        amount: 0
+    },
+    {
+        id: 2,
         name: 'Book',
         priceUSD: 10,
         img: require('../assets/products/book.png'),
         amount: 0
     },
     {
-        id: 2,
+        id: 3,
         name: 'Bitcoin Pizza',
         priceUSD: 35,
         img: require('../assets/products/bitcoin-pizza.png'),
         amount: 0
     },
     {
-        id: 3,
+        id: 4,
         name: 'Whale Toy',
         priceUSD: 90,
         img: require('../assets/products/whale-toy.png'),
         amount: 0
     },
     {
-        id: 4,
+        id: 5,
         name: 'Video Game',
-        priceUSD: 120,
+        priceUSD: 115,
         img: require('../assets/products/web2Game.png'),
         amount: 0
     },
     {
-        id: 5,
+        id: 6,
+        name: 'Ledger Wallet',
+        priceUSD: 150,
+        img: require('../assets/products/ledger.png'),
+        amount: 0
+    },
+    {
+        id: 7,
         name: 'Gaming Console',
         priceUSD: 250,
         img: 'https://neal.fun/spend/images/gaming-console.jpg',
         amount: 0
     },
     {
-        id: 6,
+        id: 8,
         name: 'Bike',
         priceUSD: 400,
         img: 'https://neal.fun/spend/images/bike.jpg',
         amount: 0
     },
     {
-        id: 7,
+        id: 9,
         name: 'Mining Garden Gnome',
         priceUSD: 435,
         img: require('../assets/products/mining-garden-gnome.jpg'),
         amount: 0
     },
     {
-        id: 8,
+        id: 10,
         name: 'Smartphone',
         priceUSD: 700,
         img: 'https://neal.fun/spend/images/smartphone.jpg',
         amount: 0
     },
     {
-        id: 9,
+        id: 11,
         name: 'Shiba Inu',
         priceUSD: 1200,
         img: require('../assets/products/shiba-inu.png'),
         amount: 0
     },
     {
-        id: 10,
+        id: 12,
         name: 'Nvidia RTX-4090',
         priceUSD: 1640,
         img: require('../assets/products/nvidia-rtx-4090.png'),
         amount: 0
     },
     {
-        id: 11,
+        id: 13,
         name: 'Rolex',
         priceUSD: 15700,
         img: 'https://neal.fun/spend/images/rolex.jpg',
         amount: 0
     },
     {
-        id: 12,
+        id: 14,
         name: 'Real Bored Ape',
         priceUSD: 25000,
         img: require('../assets/products/real-bored-ape.png'),
         amount: 0
     },
     {
-        id: 13,
+        id: 15,
         name: 'Tesla Car',
         priceUSD: 52300,
         img: require('../assets/products/tesla-car.png'),
         amount: 0
     },
     {
-        id: 14,
+        id: 16,
         name: 'Lambo (WEN)',
         priceUSD: 235000,
         img: require('../assets/products/lambo.png'),
