@@ -99,39 +99,54 @@ const itemList =[
     },
     {
         id: 14,
+        name: 'Meta VR Set',
+        priceUSD: 2299,
+        img: require('../assets/products/metaquest.png'),
+        amount: 0
+    },
+    {
+        id: 15,
         name: 'Rolex',
         priceUSD: 15700,
         img: 'https://neal.fun/spend/images/rolex.jpg',
         amount: 0
     },
     {
-        id: 15,
+        id: 16,
         name: 'Real Bored Ape',
         priceUSD: 25000,
         img: require('../assets/products/real-bored-ape.png'),
         amount: 0
     },
     {
-        id: 16,
+        id: 17,
         name: 'Tesla Car',
         priceUSD: 52300,
         img: require('../assets/products/tesla-car.png'),
         amount: 0
     },
     {
-        id: 17,
+        id: 18,
         name: 'Lambo (WEN)',
         priceUSD: 235000,
         img: require('../assets/products/lambo.png'),
         amount: 0
     },
     {
-        id: 18,
+        id: 19,
         name: 'Single Family Home',
         priceUSD: 300000,
         img: "https://neal.fun/spend/images/single-family-home.jpg",
         amount: 0
     },
+    {
+        id: 20,
+        name: 'Private Jet',
+        priceUSD: 1000000,
+        img: require('../assets/products/private-jet.png'),
+        amount: 0
+    },
+
 
   
 ]

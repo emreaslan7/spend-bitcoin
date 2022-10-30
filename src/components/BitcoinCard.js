@@ -1,6 +1,6 @@
 import bitcoinlogoV3 from '../assets/bitcoin_V3.png'
-// import bitcoinlogoV1 from '../assets/bitcoin-logo-2010-v1.png'
-// import bitcoinlogoV2 from '../assets/bitcoin-logo-v2.png'
+import bitcoinlogoV1 from '../assets/bitcoin-logo-2010-v1.png'
+import bitcoinlogoV2 from '../assets/bitcoin-logo-v2.png'
 // import bitcoinAccepted from '../assets/bitcoin_accpeted_here.png'
 import { useEffect, useState } from 'react';
 
@@ -14,8 +14,9 @@ import { selectYear, createBudget } from '../redux/budgetSlice'
 function BitcoinCard() {
 
     const [selectedYear,setSelectedYear] = useState('Now');
+    console.log(selectedYear);
     const dispatch = useDispatch()
-
+    let btcLogo;
 
     useEffect(() => {
         dispatch(selectYear(selectedYear));
@@ -36,12 +37,22 @@ function BitcoinCard() {
         }
     }
 
-
+    function setbtcLogo(){
+        if(selectedYear === '2010'){
+            btcLogo = bitcoinlogoV1;
+        }else if(selectedYear === '2011'){
+            btcLogo = bitcoinlogoV2;
+        }
+        else{
+            btcLogo = bitcoinlogoV3;
+        }
+    }
+    setbtcLogo();
 
     return (
         <div className='bg-white py-10 mt-1'>
             <div className="flex flex-col items-center justify-center ">
-                <img className='w-32 rounded-full mb-5' alt="" src={bitcoinlogoV3} />
+                <img className='w-32 rounded-full mb-5' alt="" src={btcLogo} />
                 <h1 className='text-[#F7931A] font-bold text-2xl'>Spend 1 Bitcoin 
                 {selectedYear === 'Now' ? "": ' in '+selectedYear}</h1>
 
