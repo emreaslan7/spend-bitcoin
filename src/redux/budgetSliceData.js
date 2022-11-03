@@ -127,23 +127,44 @@ const itemList =[
     },
     {
         id: 18,
+        name: 'Yacht',
+        priceUSD: 157000,
+        img: 'https://neal.fun/spend/images/yacht.jpg',
+        amount: 0
+    },
+    {
+        id: 19,
         name: 'Lambo (WEN)',
         priceUSD: 235000,
         img: require('../assets/products/lambo.png'),
         amount: 0
     },
     {
-        id: 19,
+        id: 20,
         name: 'Single Family Home',
         priceUSD: 300000,
         img: "https://neal.fun/spend/images/single-family-home.jpg",
         amount: 0
     },
     {
-        id: 20,
+        id: 21,
+        name: 'Space Travel Ticket',
+        priceUSD: 675000,
+        img: require('../assets/products/space-travel-ticket.png'),
+        amount: 0
+    },
+    {
+        id: 22,
         name: 'Private Jet',
         priceUSD: 1000000,
         img: require('../assets/products/private-jet.png'),
+        amount: 0
+    },
+    {
+        id: 23,
+        name: 'Island',
+        priceUSD: 5000000,
+        img: require('../assets/products/island.png'),
         amount: 0
     },
 
