@@ -10,7 +10,7 @@ This project is developed for improving react-redux skills, learning deep dive t
 
 ## Demo
 
-[HearthHue.app](https://hearth-hue.vercel.app/)
+[spend-bitcoin.app](https://spend-bitcoin.vercel.app/)
 
 
 
