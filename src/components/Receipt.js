@@ -29,7 +29,7 @@ const Receipt = () => {
     })
   
     return (
-        <div className='mx-3 lg:mx-0 mt-2 bg-white'>
+        <div className='mx-3 lg:mx-0 mt-2 bg-white mb-12'>
             <div className='p-8'>
                 <h1 className='font-bold text-3xl text-center mb-4'>Your Receipt</h1>
                 <div>

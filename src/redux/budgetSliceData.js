@@ -186,6 +186,7 @@ const yearStats=[
     7188,
     29391,
     47743,
+    30403,
 ]
 
 export {itemList, yearStats};
